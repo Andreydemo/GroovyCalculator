@@ -18,7 +18,13 @@ class SyntaxElementContainer {
         syntaxElement.closedSymbol = closedSympol
 
         allElements.add(syntaxElement)
-        openedElements.add(syntaxElement)
+
+        if(closedSympol == null) {
+            closedElements.add(syntaxElement)
+        } else {
+
+            openedElements.add(syntaxElement)
+        }
     }
 
     def closeElement(int index, String closeSymbol) {
@@ -43,7 +49,7 @@ class SyntaxElementContainer {
 
     def boolean isGStringClosedPresent() {
         for (SyntaxElement it : closedElements) {
-            if (it.symbol == "\${") {
+            if (it.symbol == "\${" || it.symbol == "\$" ) {
                 return true;
             }
         }

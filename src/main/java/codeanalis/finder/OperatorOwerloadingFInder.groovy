@@ -9,15 +9,22 @@ class OperatorOwerloadingFInder implements Finder {
     public static final String call = "("
 
     @Override
-    def find(String line) {
+    def boolean find(String line) {
+        def result = false
         for (String it : operators) {
             if (line.contains(it + call)) {
                 println "OVERLOADING found opertor ${it} line : ${line}"
+                result = true
                 break
             }
         }
+        result
     }
 
+    @Override
+    double getMark() {
+        return 1
+    }
 
     def OperatorOwerloadingFInder mod(OperatorOwerloadingFInder it) {
         return it;

@@ -8,13 +8,20 @@ class OperatorUssagesFinder implements Finder {
     def operators = ["..", "<=>", ".@", "*.", "?."]
 
     @Override
-    def find(String line) {
-
+    def boolean find(String line) {
+        def result = false
         for (String it : operators) {
             if(line.contains(it)){
                 println "GROOVY OPERATOR found ${line}"
+                result = true
                 break;
             }
         }
+        result
+    }
+
+    @Override
+    double getMark() {
+        return 0.5
     }
 }

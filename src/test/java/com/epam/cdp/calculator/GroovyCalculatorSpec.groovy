@@ -1,4 +1,4 @@
-package com.epam.cdp.caclulator
+package com.epam.cdp.calculator
 
 import spock.lang.Specification
 import spock.lang.Unroll

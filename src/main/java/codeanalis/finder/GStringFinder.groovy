@@ -8,11 +8,17 @@ import codeanalis.SyntaxElementContainer
  */
 class GStringFinder implements Finder{
     @Override
-    def find(String line) {
+    def boolean find(String line) {
         SyntaxElementContainer elements = new AnaliseHelper().analise(line)
-        if (elements.isGStringClosedPresent()) {
+        def result = elements.isGStringClosedPresent()
+        if (result) {
             println "GSTRING found ${line}"
         }
+        return result
     }
 
+    @Override
+    double getMark() {
+        return 0.5
+    }
 }

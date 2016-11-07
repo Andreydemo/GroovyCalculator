@@ -5,6 +5,8 @@ package codeanalis.finder
 interface Finder {
 
 
-    def find(String line)
+    def boolean find(String line)
+
+    def double getMark()
 
 }

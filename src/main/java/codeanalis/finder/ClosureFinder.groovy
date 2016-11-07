@@ -9,10 +9,16 @@ import codeanalis.SyntaxElementContainer
 class ClosureFinder implements Finder {
 
     @Override
-    def find(String line) {
-        if (hasClosure(line))
+    def boolean find(String line) {
+        def result = hasClosure(line)
+        if (result)
             println "Closure-> ${line}"
-        return line
+        return result
+    }
+
+    @Override
+    def double getMark() {
+        return 1
     }
 
     private boolean hasClosure(String line) {
